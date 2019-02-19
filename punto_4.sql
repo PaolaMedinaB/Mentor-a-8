@@ -1,4 +1,6 @@
-SELECT emp.employee_id, emp.last_name, emp.manager_id, jefe.last_name AS manager_last_name
-FROM employees emp
-INNER JOIN employees jefe
-ON emp.MANAGER_ID = jefe.EMPLOYEE_ID 
+SELECT department_name, emp.first_name, city
+FROM departments 
+JOIN employees emp
+ON departments.MANAGER_ID = emp.EMPLOYEE_ID
+INNER JOIN locations
+ON departments.LOCATION_ID = locations.LOCATION_ID	
